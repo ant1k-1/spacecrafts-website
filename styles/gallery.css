@@ -1,0 +1,242 @@
+/* ------------ gallery begin ------------ */
+.gallery-container{
+    height: auto;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    font-size: 2rem;
+    background-color: rgba(255,255,255,0.13);
+    color: white;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    margin: 6rem 0 5rem 0;
+    padding: 1rem;
+}
+
+.gallery-container::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transition: 0.5s;
+    filter: blur(30px);
+    z-index: -1;
+}
+
+.gallery-container::before, 
+.gallery-container::after {
+    background-image: linear-gradient(-45deg,
+    rgb(67,69,88)    0%,
+        rgb(109, 72, 99) 50%,
+        rgb(135, 110, 155) 100%
+    );
+}
+
+
+.title__gallery {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0 3rem 0;
+}
+.title__gallery::after{
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    width: 5rem;
+    top:6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:#ffffff;
+    animation: underline alternate ease-in-out 2s .25s both;
+}
+@keyframes underline {
+    0%{
+        width: 5rem;
+    }
+    100%{
+        width: 20rem;
+    }
+}
+
+.gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    font-size: 0;
+    position: relative;
+}
+.gallery-item {
+    display: block;
+    flex: 25%;
+    overflow: hidden;
+    position: relative;
+    margin: 0.5rem;
+}
+.gallery-item img {
+    max-width: 100%;
+    min-height: 100%;
+    height: auto;
+    transition: all .5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    transition: all .5s ease; 
+    z-index: -1;
+}
+
+.gallery-item-hover{
+    background: linear-gradient(to top, #000000 -25%, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    opacity: 0;
+    transition: opacity .5s ease;   
+    z-index: 2;
+    font-size: 2rem;
+    cursor: default;
+}
+
+.gallery-item:hover .gallery-item-hover{
+    opacity: 1;
+    z-index: 2;
+}
+
+@media (max-width: 720px) {
+    .gallery-item{
+        flex: 100%;
+    }
+    .modal-img {
+        width: 100% !important; 
+        object-fit: cover;
+    }
+    .closeBtn {
+        font-size: 3rem !important;
+    }
+    
+    .nextBtn {
+        font-size: 3.5rem !important;
+    }
+    
+    .prevBtn{
+        font-size: 3.5rem !important;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 710px) {
+    .gallery-item{
+        flex: 50%;
+    }
+    .modal-img {
+        width: 50% !important; 
+        object-fit: cover;
+    }
+    .closeBtn {
+        font-size: 3rem !important;
+    }
+    
+    .nextBtn {
+        font-size: 3.5rem !important;
+    }
+    
+    .prevBtn{
+        font-size: 3.5rem !important;
+    } 
+}
+
+@media (max-width: 1800px) and (min-width: 1000px) {
+    .gallery-item{
+        flex: 33.3%; 
+    }
+    .modal-img {
+        width: 50% !important;
+        object-fit: cover;
+    }
+    .closeBtn {
+        font-size: 3rem !important;
+    }
+    
+    .nextBtn {
+        font-size: 6rem !important;
+    }
+    
+    .prevBtn{
+        font-size: 6rem !important;
+    }
+    
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.733);
+    margin-top: -1px;
+    animation: zoom 0.3s ease-in-out;
+    z-index: 100;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+.modal img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.closeBtn, .nextBtn, .prevBtn {
+    color: rgba(255, 255, 255, 0.87);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.closeBtn {
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+}
+
+.nextBtn {
+    top: 50%;
+    right: 0;
+    font-size: 6rem;
+}
+
+.prevBtn{
+    top: 50%;
+    left: 0;
+    right: 90%;
+    font-size: 6rem;
+}
+
+.closeBtn:hover, .nextBtn:hover, .prevBtn:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* ------------ gallery end ------------ */

@@ -1,0 +1,99 @@
+/* ------------ buttons begin ------------ */
+.fourt_btn::after {
+    transition: all 0.3s ease;
+}
+.fourt_btn:hover::after {
+    transition: all 0.3s ease-out;
+}
+.fourt_btn::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+}
+.fourt_btn:hover::after {
+    transform: scale(1.1);
+}
+
+.contacts-buttons button:active {
+    transform: translateY(-1px) scale(1.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease;
+    
+}
+.third_btn::after {
+    transition: all 0.35s;
+}
+.third_btn:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s ease-in-out;
+}
+.third_btn::after {
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+}
+
+.second_btn::after {
+    transition: all 0.35s;
+}
+.second_btn:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s ease-in-out;
+}
+.second_btn::after {
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+}
+.first_btn::after {
+    transition: all 0.3s ease;
+}
+.first_btn:hover::after {
+    transition: all 0.3s ease-out;
+}
+.contacts-buttons button {
+    font-size: 2em;
+    background: #d8a2f7;
+    color: #fff;
+    border: .25rem solid #b22cff;
+    padding: 0.85em 0.75em;
+    margin: 1rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+main {
+    z-index: 0;
+}
+.contacts-buttons button:hover {
+    color: #bb00ff;
+}
+.contacts-buttons button::after {
+    content: "";
+    background: #ecf0f1;
+    position: absolute;
+    z-index: -1;
+    padding: 0.85em 0.75em;
+    display: block;
+}
+button.first_btn::after {
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    }
+button.first_btn:hover::after {
+    transform: skewX(-45deg) scale(1, 1);
+}
+/* ------------ buttons end ------------ */

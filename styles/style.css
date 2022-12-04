@@ -1,0 +1,144 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 720px){
+    .main-container > *,
+    .main-container > *::after,
+    .main-container > *::before{
+        flex: 0 0 auto;
+        max-width: auto;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 720px) {
+    /* ------------ layout begin ------------ */
+    .main-container > *,
+    .main-container > *::after,
+    .main-container > *::before{
+        flex: 0 0 100%;
+        max-width: 95%;
+        margin-bottom: 10px;
+    }
+    /* ------------ layout end ------------ */
+}
+
+/* ------------ layout begin ------------ */
+.main-container {
+    display: flex;
+    justify-content:space-around;
+    flex-flow: row wrap;
+}
+/* ------------ layout end ------------ */
+
+body{
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Roboto', sans-serif;
+
+
+    background-color: rgb(19,23,49);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main{
+    margin-top: 4rem;
+}
+
