@@ -87,4 +87,20 @@ anchor.addEventListener("click", event => {
     });
 })
 
+const sendBtn = document?.querySelector(".send_about");
 
+sendBtn?.addEventListener("click", e => {
+
+    let offset = document.querySelector('.form-container').getBoundingClientRect().top;
+    let temp;
+    if (window.innerWidth < 500){
+        temp = 110;
+    }
+    else{
+        temp = 200;
+    }
+    window.scrollTo({
+        top: offset + window.scrollY -temp,
+        behavior: "smooth"
+    });
+});

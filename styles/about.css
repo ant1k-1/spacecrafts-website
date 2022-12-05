@@ -148,7 +148,21 @@
     height: auto;
     width: 100%;
 }
-
+.send_about{
+    margin-top: 1rem;
+    width: auto;
+    height: auto;
+    padding: 1rem 1rem;
+    background-color: #ffffff;
+    color: #080710;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all .5s;
+    align-self: center;
+    transition: all .5s;
+}
 /* ------------ form end ------------ */
 
 /* for mobiles */
@@ -165,6 +179,11 @@
         opacity: 1;
         transition: all 1s ease-in-out;
     }
+    .send_about:active{
+        background-color:#23a3c3;
+        transition: all .1s;
+        color: #ffffff;
+    }
 }
 
 /* for tablets */
@@ -174,9 +193,19 @@
         animation: input_animation alternate both 1s 1s ease-in-out;
         font-size: 1.5rem;
     }
+    .send_about:active{
+        background-color:#23a3c3;
+        transition: all .1s;
+        color: #ffffff;
+    }
 }
 
 /* for desktops */
 @media (min-width: 1281px) {
+    .send_about:hover{
+        background-color:#23a3c3;
+        transition: all .25s;
+        color: #ffffff;
+    }
     
 }
