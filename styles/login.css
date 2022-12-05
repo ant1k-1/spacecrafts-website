@@ -210,8 +210,13 @@
     color: black;
     height: 35rem;
     /* padding: 1rem 3rem; */
-    width: 35rem;
+    width: 100%;
     margin: auto;
     overflow: hidden;
     justify-items: center;
+}
+
+.login_form1 h2{
+    padding: 3rem 3rem 0;
+    font-size: 2.5rem;
 }
