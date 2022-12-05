@@ -119,10 +119,7 @@ h6 {
 /* ------------ layout end ------------ */
 
 body{
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Roboto', sans-serif;
-
-
     background-color: rgb(19,23,49);
     background-repeat: no-repeat;
     background-position: center center;
@@ -142,3 +139,7 @@ main{
     margin-top: 4rem;
 }
 
+
+/* for mobiles 0 - 767px */
+/* for tablets 768px - 1279px */
+/* for desktops 1280 - max-width */

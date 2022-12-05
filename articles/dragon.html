@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400&display=swap" rel="stylesheet">
+    <script async src="https://kit.fontawesome.com/6cc05e1e8e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -97,10 +98,38 @@
     <main>
         <div class="wrapper">
             <div class="main-container">
-                <div class="empty-list flex">
-                    <img src="../icons/not-found.png" alt="sad-face">
-                    <span>Извините, статья по вашему запросу не найдена или ещё не создана.</span>
+                <div class="article-container">
+                    <img src="../gallery/space-dragon.png" alt="Crew Dragon" class="article-image-left">
+                    <div class="article-text">
+                        <h1>Космический корабль "Crew Dragon"</h1>
+                        <p>Dragon 2 (также известный как Crew Dragon) — американский многоразовый пилотируемый космический корабль компании SpaceX, 
+                            разработанный по заказу НАСА в рамках программы Commercial Crew Development. Предназначен для доставки экипажа до 7 человек 
+                            на Международную космическую станцию и возвращения их на Землю.</p>
+                        <p>На 2022 год в парке SpaceX имеется 4 корабля этой серии: Endeavour, Resilience, Endurance и Freedom.</p>
+                        <p>Грузовой вариант корабля Cargo Dragon используется для доставки грузов на МКС, начиная со второй фазы программы снабжения 
+                            Commercial Resupply Services, заменив использовавшийся в первой фазе программы грузовой корабль Dragon 1. 
+                            Грузовая и пилотируемая версии Dragon 2 почти одинаковы, за исключением специальных технических средств, 
+                            добавленных в пилотируемую версию: системы аварийного спасения, системы жизнеобеспечения, информационных 
+                            дисплеев и органов управления, позволяющих пилоту при необходимости перейти на ручное управление.
+                        </p>
+                        <p>Dragon 2 выводится на орбиту ракетой-носителем Falcon 9 со стартового комплекса LC-39A в Космическом центре Кеннеди, 
+                            его спускаемая капсула возвращается на Землю приводнением. Как показала миссия SpaceX AX-1, 
+                            в результате возвращение корабля критически зависит от погоды в месте посадки, в отличие от всех остальных средств доставки на МКС.
+                        </p>
+                        <p>Первый испытательный запуск корабля выполнен 2 марта 2019 года без экипажа. Испытательный пилотируемый полёт с двумя 
+                            астронавтами на борту начался 30 мая 2020 года, 31 мая корабль успешно пристыковался к адаптеру IDA американского модуля 
+                            «Гармония» МКС и 2 августа 2020 — успешно приводнился в Мексиканском заливе неподалеку от Пенсаколы.
+                        </p>
+                    </div>
+                    
+                    <div class="share-container">
+                        <button class="share-btn" type="button">
+                            Поделиться
+                        </button>
+                        <button class="like-btn not-liked" type="button"></button>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </main>
@@ -156,6 +185,6 @@
         <img src="../icons/top_arrow.png" alt="top-arrow">
     </aside>
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/favorites.js"></script>
+    <script src="../scripts/articles.js"></script>
 </body>
 </html>
