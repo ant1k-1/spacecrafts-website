@@ -10,8 +10,10 @@
     color: #ffffff;
 }
 
-.contact_form:hover input,
-.contact_form:hover textarea
+.form-container:hover input,
+.form-container:hover textarea,
+.contact_form:focus input,
+.contact_form:focus textarea
 {
     transform: rotateX(0);
     transform-origin: bottom;
@@ -20,7 +22,6 @@
     border-radius: 10px;
     color: black;
 }
-.contact_form:hover #btn,
 .contact_form:hover textarea::placeholder,
 .contact_form:hover textarea
 {
@@ -97,7 +98,6 @@
     font-weight: 500;
     line-height: 42px;
     text-align: center;
-    color: white;
     color: black;
 }
 #form__title{
@@ -117,7 +117,6 @@
 }
 #btn{
     grid-area: btn;
-    opacity: 0;
 }
 
 .contact_form{
@@ -149,23 +148,35 @@
     height: auto;
     width: 100%;
 }
+
 /* ------------ form end ------------ */
 
 /* for mobiles */
 @media (max-width: 767px) {
     .contact_form{
-        grid-template-areas: 
-        "title"
-        "name"
-        "surname"
-        "email"
-        "tel"
-        "message"
-        "btn";
-        grid-template-columns: 1fr;
         width: 95%;
     }
-    .form__message {
-        grid-column: span 1;
+    .contact_form .form__text,
+    .contact_form textarea{
+        animation: input_animation alternate both 1s 1s ease-in-out;
+        font-size: 1.5rem;
     }
+    .contact_form textarea:focus::placeholder{
+        opacity: 1;
+        transition: all 1s ease-in-out;
+    }
+}
+
+/* for tablets */
+@media (min-width: 768px) and (max-width: 1280px) {
+    .contact_form .form__text,
+    .contact_form textarea{
+        animation: input_animation alternate both 1s 1s ease-in-out;
+        font-size: 1.5rem;
+    }
+}
+
+/* for desktops */
+@media (min-width: 1281px) {
+    
 }

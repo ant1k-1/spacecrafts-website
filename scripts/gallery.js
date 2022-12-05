@@ -1,72 +1,71 @@
 'use strict'
+//Модальная галерея для картинок в статье
 const images = document.querySelectorAll(".gallery-item img");
 const hovers = document.querySelectorAll(".gallery-item .gallery-item-hover")
 let imgIndex = 0;
 let imgSrc;
 
-// get images src onclick
+// получаем по клику на картинку их src
 hovers.forEach((hover, i) =>{
     hover.addEventListener("click", event=>{
         imgSrc = event.target.nextElementSibling.src;
-        //run modal function
         imgModal(imgSrc);
-        //index of the next image
+        //индекс следующей картинки
         imgIndex = i;
     })
 });
-//creating the modal
+//создание модальной галереи
 let imgModal = (src) => {
     
     const modal = document.createElement("div");
     modal.setAttribute("class", "modal");
     
-    //add modal to the parent element 
+    //добавляем модальную галерею в мейн
     document.querySelector("main").append(modal);
-    //adding image to modal
+    //добавление картинки в галерею
     const newImage = document.createElement("img");
     newImage.setAttribute("src", src);
     newImage.setAttribute("class", "modal-img")
-    //creating the close button
+    //cсоздаем кнопку выхода
     const closeBtn = document.createElement("i");
     closeBtn.setAttribute("class", "fas fa-times closeBtn");
-    //close function
+    //закрытие галереи
     closeBtn.onclick = () => {
         modal.remove();
     };
-    //next and previous buttons
+    //создаем кнопки вперед назад
     const nextBtn = document.createElement("i");
     nextBtn.setAttribute("class", "fas fa-angle-right nextBtn");
-    // change the src of current image to the src of next image
+    // изменение src текущего изображения на src следующего изображения
     nextBtn.onclick = () => {
         newImage.setAttribute("src", nextImg())
     };
     const prevBtn = document.createElement("i");
     prevBtn.setAttribute("class", "fas fa-angle-left prevBtn");
-    // change the src of current image to the src of pevious image
+        // изменение src текущего изображения на src предыдущего изображения
     prevBtn.onclick = () => {
         newImage.setAttribute("src", prevImg())
     }
+    //собираем модальную галерею
     modal.append(newImage, closeBtn, nextBtn, prevBtn);
 };
-//next image function
+//получаем src на следующую картинку
 let nextImg = () => {
     console.log(imgIndex);
     imgIndex++;
-    //check if it is the the last image
+    //если текущая картинка - последняя 
     if (imgIndex >= images.length) {
         imgIndex = 0
     }
-    //return src of the new image
     return images[imgIndex].src;
 };
-//previous image function
+//получаем src на предыдущую картинку
 let prevImg = () => {
     imgIndex--;
     console.log(imgIndex);
-    //check if it is the first image
+    //если текущая картинка - первая 
     if (imgIndex < 0) {
         imgIndex = images.length - 1
     }
-    //return src of previous image
     return images[imgIndex].src
 }

@@ -30,10 +30,15 @@
 
 .gallery-container::before, 
 .gallery-container::after {
-    background-image: linear-gradient(-45deg,
+    /* background-image: linear-gradient(-45deg,
     rgb(67,69,88)    0%,
         rgb(109, 72, 99) 50%,
         rgb(135, 110, 155) 100%
+    ); */
+    background-image: linear-gradient(-45deg,
+        rgb(103, 103, 19) 0%,
+        rgb(109, 72, 99) 50%,
+        rgb(51, 36, 54) 100%
     );
 }
 

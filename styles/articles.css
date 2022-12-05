@@ -1,9 +1,4 @@
 .article-container{
-    /* background-color: rgba(255, 255, 255, 0.755);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6); */
-
     box-sizing: border-box;
     box-shadow: 0 0 10px -5px black;
     background-color: #fff;
@@ -14,30 +9,25 @@
     height: 100%;
     margin: 3rem 0;
 }
-
-   /* top | right | botton | left */
 .article-image-left{
     max-width: 40%;
     margin: 1rem 2rem 1rem 0;
     float: left;
     border-radius: 1rem;
-
     overflow: hidden;
 }
-
+/* top | right | botton | left */
 .article-image-left:first-child{
     margin: 0 2rem 1rem 0;
 }
 
 .article-image-right{
     max-width: 40%;
-    margin: 1rem 0 0 2rem;
+    margin: 1rem 0 1rem 2rem;
     float: right;
     border-radius: 1rem;
-
     overflow: hidden;
 }
-
 
 .article-container p{
     font-size: 1.5rem;
@@ -46,18 +36,19 @@
     line-height: 2rem;
 }
 
-.article-container h1{
+.article-container h1,
+.article-container h2{
     font-size: 2rem;
-    margin-bottom: 2rem;
     margin-top: 1rem;
     text-align: center;
 }
 
+.article-container h1{
+    margin-bottom: 2rem;
+}
+
 .article-container h2{
-    font-size: 2rem;
     margin-bottom: 1rem;
-    margin-top: 1rem;
-    text-align: center;
 }
 
 .article-container ul li{
@@ -128,7 +119,6 @@
     }
     .share-container{
         margin: 1rem 1rem 0 1rem; 
-        /* top | right | botton | left */
     }
     .share-btn:active{
         background-color: #141731;
@@ -139,6 +129,19 @@
     }
     .article-container{
         padding: 1.5rem;
+    }
+    .article-image-left, .article-image-right{
+        max-width: 100%;
+    }
+    .article-container p,
+    .article-container ul li
+    {
+        font-size: 1.3rem;
+    }
+    .article-container h1,
+    .article-container h2
+    {
+        font-size: 1.5rem;
     }
 }
 
@@ -152,8 +155,12 @@
         width: 12rem;
         font-size: 1.5rem;
     }
+    .article-image-left, .article-image-right{
+        max-width: 50%;
+    }
 }
 
+/* for desktops */
 @media (min-width: 1281px) {
     .like-btn{
         width: 4rem;

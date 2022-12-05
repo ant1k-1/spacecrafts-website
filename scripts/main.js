@@ -1,17 +1,15 @@
 'use strict'
-var likeButtons = document.querySelectorAll('.add-to-favourites-btn');
-likeButtons?.forEach((button) => {
+
+//кнопка добавить в избранное
+var favorBtns = document.querySelectorAll('.add-to-favourites-btn');
+favorBtns?.forEach((button) => {
     button.addEventListener('click', function() {
-        if (button.classList.contains('favor')) {
-            //favouritesNumber.innerHTML = Number(favouritesNumber.innerHTML) - 1;
-        } else {
-            //favouritesNumber.innerHTML = Number(favouritesNumber.innerHTML) + 1;
-        }
         button.classList.toggle('favor');
         button.classList.toggle('not-favor');
     });
 });
 
+//строка поиска
 var search = document.querySelector('.search__line input');
 var articales = document.querySelectorAll('.article-wrapper');
 
@@ -28,15 +26,8 @@ function toggleEmpySearch(count) {
 
 function searchScroll() {
     let offset = document.querySelector('.articles-list').getBoundingClientRect().top;
-    let headerSize;
-
-    if (window.innerWidth > 960) {
-        headerSize = 200;
-    } else {
-        headerSize = 160;
-    }
     window.scrollTo({
-        top: offset + window.scrollY - headerSize,
+        top: offset + window.scrollY - 200,
         behavior: "smooth"
     });
 }
@@ -47,7 +38,6 @@ start?.addEventListener('click', () => {
 })
 
 function showSearchResults() {
-    
     let searchValue = search.value.toLowerCase();
     let invisCount = 0;
     articales.forEach(articale => {
@@ -58,7 +48,6 @@ function showSearchResults() {
         articale.classList.add('invisible');
         invisCount++;
     });
-
     toggleEmpySearch(invisCount);
     searchScroll();
 }
@@ -68,6 +57,7 @@ search?.addEventListener('keyup', () => {
     showSearchResults();
 })
 
+//якорь наверх
 var anchor = document.querySelector(".anchor");
 function initAnchor() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;

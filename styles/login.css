@@ -1,0 +1,196 @@
+.welcome{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "sign-in sign-up";
+    /* padding: 1rem 3rem; */
+}
+
+.loginf{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "title"
+    "email"
+    "password"
+    "btn";
+    padding: 1rem 3rem;
+}
+
+.registrationf{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem 3rem;
+    grid-template-areas: 
+    "title"
+    "email"
+    "password"
+    "password"
+    "btn";
+}
+.form-container{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.login_form{
+    gap: 1rem 1rem;
+    background-color: rgba(255, 255, 255, 0.755);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+
+    height: 35rem;
+    /* padding: 1rem 3rem; */
+    width: 35rem;
+    margin: auto;
+    overflow: hidden;
+    justify-items: center;
+}
+.login_form h2{
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+}
+
+.sign-up-btn, .sign-in-btn{
+    margin-top: -5rem;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all .5s;
+    height: 20rem;
+    width: 15rem;
+}
+
+.sign-in-btn{
+    grid-area: sign-in;
+}
+
+.sign-up-btn{
+    grid-area: sign-up;
+}
+
+.login_form label{
+    display: block;
+    /* margin-top: 30px;
+    margin-right: 10px; */
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    color: black;
+}
+.login_form div{
+    width: 100%;
+}
+.login_form input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    /* background-color: rgba(255,255,255,0.07); */
+    border-radius: 0px;
+    padding: 10 10px;
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color:#000000
+}
+.login_form .form__text{
+    animation: input_animation alternate both 1s 1s ease-in-out;
+    font-size: 1.5rem;
+}
+
+.login_form #btn{
+    margin-top: 1rem;
+    width: 10rem;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all .5s;
+    opacity: 1; 
+    width: 100%;
+    height: 5rem;
+}
+
+.visible_form{
+    display: normal;
+}
+
+.invisible_form{
+    display: none;
+}
+
+@keyframes input_animation {
+    0%{
+        transform: rotateX(80deg);
+    }
+    100%{
+        transform: rotateX(0);
+        border-radius: 1rem;
+        background-color: #27cdf5;
+    }
+}
+
+/* for mobiles */
+@media (max-width: 767px) {
+    .welcome{
+        width: 95%;
+        grid-template-areas: 
+        "title"
+        "sign-in"
+        "sign-up";
+        grid-template-columns: 1fr;
+    }
+    .loginf, .registrationf{
+        width: 95%;
+    }
+    .login_form #btn{
+        width: 100%;
+    }
+    .sign-up-btn, .sign-in-btn{
+        width: 90%;
+        height: 5rem;
+    }
+    .login_form .sign-up-btn:active,
+    .login_form .sign-in-btn:active,
+    .login_form #btn:active{
+        background-color:#27cdf5;
+        transition: all .1s;
+        color: #ffffff;
+    }
+}
+
+/* for tablets */
+@media (min-width: 768px) and (max-width: 1280px) {
+    .login_form .sign-up-btn:active,
+    .login_form .sign-in-btn:active,
+    .login_form #btn:active{
+        background-color:#27cdf5;
+        transition: all .1s;
+        color: #ffffff;
+    }
+}
+
+/* for desktops */
+@media (min-width: 1281px) {
+    .login_form .sign-up-btn:hover,
+    .login_form .sign-in-btn:hover,
+    .login_form #btn:hover{
+        background-color:#27cdf5;
+        transition: all .5s;
+        color: #ffffff;
+    }
+}

@@ -5,6 +5,9 @@
     .burger-menu {
         display: none ;
     }
+    .navbar-logo{
+        display: normal;
+    }
 }
 @media screen and (max-width: 805px) {
     .logo-and-text {
@@ -15,6 +18,9 @@
         padding-left: 1%;
         padding-right: 1%;
         align-items: center; 
+    }
+    .navbar-logo{
+        display: none;
     }
     .burger-menu input {
         position: absolute;

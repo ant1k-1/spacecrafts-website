@@ -1,14 +1,14 @@
 'use strict'
-
+//скрипт добавления кнопки на статью в избранное
 const list = document?.querySelector(".text__basket");
 const favors = document?.querySelectorAll(".add-to-favourites-btn, not-favor");
 const position = document?.querySelectorAll(".article-title");
 var counter = document?.querySelector(".favourites-number");
-const basketButton = document?.querySelector(".basket");
+const favorButton = document?.querySelector(".basket");
 var btnNames = [];
 
-basketButton.addEventListener("click", event => {
-    refreshBasket();
+favorButton.addEventListener("click", event => {
+    refreshFavor();
 });
 
 function refreshCounter(){
@@ -16,16 +16,16 @@ function refreshCounter(){
     else counter.innerHTML = Number(btnNames.length);
 }
 
-function refreshBasket(){
+//обновление избранного
+function refreshFavor(){
     refreshCounter();
-    if (basketButton.classList.contains("active")){
-        basketButton.classList.remove("active");
+    if (favorButton.classList.contains("active")){
+        favorButton.classList.remove("active");
         while (list.lastElementChild) {
             list.removeChild(list.lastElementChild);
         }
     }else{
-        console.log("test");
-        basketButton.classList.add("active");
+        favorButton.classList.add("active");
         if (btnNames.length == 0){
             let text = document.createElement("li");
             text.innerHTML = "Пока ничего нет";
@@ -34,7 +34,6 @@ function refreshBasket(){
         for(let btn of btnNames){
             let text = document.createElement("li");
             text.append(btn)
-            console.log(btn);
             list.append(text);
         }
     }
@@ -42,6 +41,8 @@ function refreshBasket(){
 
 for(let favor of favors){
     favor.addEventListener("click", event => {
+        //вычленяю кнопку "Далее" из статьи в которой вызвался event, 
+        //ставлю ей текст названия статьи и добавляю в лист избранного
         let name = event.target.parentElement;
         let temp = event.target.previousElementSibling;
         name = name.parentElement.firstElementChild;
@@ -56,14 +57,15 @@ for(let favor of favors){
         if(!event.target.classList.contains("not-favor")){
             btnNames.push(btn);
         }
-        else {
+        else {//если убираем из избранного
             for (let i = btnNames.length - 1; i >= 0; --i) {
                 if (btnNames[i].innerHTML == name.innerHTML) {
                     btnNames.splice(i,1);
                 }
             }
         }
-        basketButton.click();
-        basketButton.click();
+        //обновление избранного
+        favorButton.click();
+        favorButton.click();
     });
 }
