@@ -103,7 +103,7 @@
     color:#000000
 }
 .login_form .form__text{
-    animation: input_animation alternate both 1s 1s ease-in-out;
+    animation: input_animation alternate both 1s .5s ease-in-out;
     font-size: 1.5rem;
 }
 
