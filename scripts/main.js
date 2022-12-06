@@ -94,7 +94,7 @@ sendBtn?.addEventListener("click", e => {
     let offset = document.querySelector('.form-container').getBoundingClientRect().top;
     let temp;
     if (window.innerWidth < 500){
-        temp = 110;
+        temp = 80;
     }
     else{
         temp = 200;

@@ -102,6 +102,7 @@
 }
 #form__title{
     grid-area: title;
+    padding: 3rem 0 1rem 0;
 }
 
 #name{
