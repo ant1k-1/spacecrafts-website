@@ -1,4 +1,4 @@
-@media screen and (min-width: 805px){
+@media screen and (min-width: 870px){
     .main-menu {
         display: normal;
     }
@@ -9,7 +9,7 @@
         display: normal;
     }
 }
-@media screen and (max-width: 805px) {
+@media screen and (max-width: 870px) {
     .logo-and-text {
         height: inherit;
         display: flex;

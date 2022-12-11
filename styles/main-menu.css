@@ -48,29 +48,60 @@
     transition: all .25s ease-in-out;
 }
 
-
-.text__basket {
-    width: 100%;
-    position: absolute;
-    top: 3.5rem;
-    right: 260%;
-    z-index: 100;
+.text__basket li .read-article-btn-favor{
+    border-radius: 1rem;
 }
 
-
-.text__basket li{
-    width: 20rem;
-    font-size: 1.5rem;
-    padding: 1rem;
-    background-color: #e7d1f4;
-    opacity: 1 !important;
-    border-bottom: #efb624 solid 5px;
+@media screen and (min-width: 870px){
+    .text__basket {
+        width: 100%;
+        position: absolute;
+        top: 3.5rem;
+        right: 260%;
+        z-index: 100;
+    }
+    .text__basket li{
+        width: 20rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        background-color: #e7d1f4;
+        opacity: 1 !important;
+        border-bottom: #efb624 solid 5px;
+    }
+    
+    .text__basket li:last-child{
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom: none;
+    }
+    
 }
-
-.text__basket li:last-child{
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border-bottom: none;
+@media screen and (max-width: 870px) {
+    .text__basket {
+        width: 100%;
+        position: absolute;
+        top: 4rem;
+        right: -125%;
+        z-index: 100;
+        
+    }
+    .text__basket li{
+        width: 20rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        background-color: #f6f1ef;
+        opacity: 1 !important;
+        border-bottom: #efb624 solid 3px;
+        border-left: #efb624 solid 5px;
+    }
+    .text__basket li:first-child{
+        border-top-right-radius: 1rem;
+    }
+    .text__basket li:last-child{
+        border-bottom-right-radius: 1rem;
+        border-bottom: none;
+    }
+    
 }
 
 .read-article-btn-favor{
@@ -154,8 +185,6 @@
 
 .navbar-menu{
     list-style-type: none;
-    padding-left: 0%;
-    margin-right: 90px;
 }
 
 .navbar-menu li a:hover {
@@ -184,6 +213,8 @@
 
 .navbar-wrap {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* flex-flow: row nowrap; */
 }
 /* ------------ main-menu end ------------ */
