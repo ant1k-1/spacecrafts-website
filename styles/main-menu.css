@@ -80,8 +80,8 @@
     .text__basket {
         width: 100%;
         position: absolute;
-        top: 4rem;
-        right: -125%;
+        top: 4.1rem;
+        right: 6.1rem;
         z-index: 100;
         
     }
