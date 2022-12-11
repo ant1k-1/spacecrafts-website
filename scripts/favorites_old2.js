@@ -34,8 +34,7 @@ favorButtonNotBurger?.addEventListener("click", event => {
     refreshFavor();
 });
 
-
-var favors = document.querySelectorAll('.add-to-favourites-btn');
+const favors = document?.querySelectorAll(".add-to-favourites-btn, not-favor");
 const position = document?.querySelectorAll(".article-title");
 var counterBurger =document?.querySelector(".favourites-number.burger");
 var counterNotBurger =document?.querySelector(".favourites-number.not-burger");
@@ -77,46 +76,56 @@ function refreshFavor(){
 }
 
 function save(){
-    var favorsSave = [];
-    let namesSave = [];
-    
+    localStorage.namesLS = JSON.stringify(names);
+    console.log(JSON.parse(localStorage.namesLS));
     for(let favor of favors){
-        favorsSave.push(favor.classList.contains("favor"));
+        favorsSave.push(favor.contains(favor));
     }
     localStorage.favorsLS = JSON.stringify(favorsSave);
-
-    for(let btn of btnNames){
-        namesSave.push(btn.outerHTML.toString());
-    }
-    localStorage.namesLS = JSON.stringify(namesSave);
 }
 
 function load(){
-    
-    let favorsLoaded =  JSON.parse(localStorage.favorsLS);
-    let btnLoaded = JSON.parse(localStorage.namesLS);
-
-    for(let btn of btnLoaded){
-        let tempDiv = document.createElement('div');
-        tempDiv.innerHTML = btn;
-        btnNames.push(tempDiv);
-    }
+    favorsLoaded = JSON.parse(localStorage.favorsLS);
     let i = 0;
     for(let favor of favors){
-        if (!favorsLoaded[i]){
-            favor.classList.add('not-favor');
-        } 
-        else{
-            favor.classList.remove('not-favor');
-            favor.classList.add('favor');
-        }
+        favor.classList.toggle(favorsLoaded[i]);
         i++;
     }
+    btnLoaded = JSON.parse(localStorage.namesLS);
+    for(let btn of btnLoaded){
+        var doc = new DOMParser().parseFromString(btn, "text/xml");
+        console.log(doc);
+        btnNames.push(doc);
+    }
+
     refreshCounter();
+    if (favorButton.classList.contains("active")){
+        favorButton.classList.remove("active");
+        while (list.lastElementChild) {
+            list.removeChild(list.lastElementChild);
+        }
+    }else{
+        favorButton.classList.add("active");
+        if (btnNames.length == 0){
+            let text = document.createElement("li");
+            text.innerHTML = "Пока ничего нет";
+            list.append(text);
+        }
+        for(let btn of btnLoaded){
+            let text = document.createElement("li");
+            text.innerHTML = btn;
+            //text.append(btn)
+            list.append(text);
+        }
+    }
+
 }
 
+var names = [];
+var favorsSave = [];
 for(let favor of favors){
     favor.addEventListener("click", event => {
+        console.log("favor clicked");
         //вычленяю кнопку "Далее" из статьи в которой вызвался event, 
         //ставлю ей текст названия статьи и добавляю в лист избранного
         let name = event.target.parentElement;
@@ -132,20 +141,23 @@ for(let favor of favors){
         text.innerHTML = name.innerHTML;
         if(!event.target.classList.contains("not-favor")){
             btnNames.push(btn);
+            console.log(btn);
+            names.push(btn.outerHTML.toString());
         }
         else {//если убираем из избранного
             for (let i = btnNames.length - 1; i >= 0; --i) {
-                if (btnNames[i].innerHTML.toString().includes(name.innerHTML)) {
+                if (btnNames[i].innerHTML == name.innerHTML) {
                     btnNames.splice(i,1);
+                    names.splice(i, 1);
                 }
             }
         }
-        save();
         //обновление избранного
         checkWidth();
         favorButton?.click();
         favorButton?.click();
+        save();
     });
 }
+
 checkWidth();
-load();

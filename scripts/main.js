@@ -2,6 +2,7 @@
 
 //кнопка добавить в избранное
 var favorBtns = document.querySelectorAll('.add-to-favourites-btn');
+//console.log("!!!!", favorBtns);
 favorBtns?.forEach((button) => {
     button.addEventListener('click', function() {
         button.classList.toggle('favor');
